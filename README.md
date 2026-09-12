@@ -17,7 +17,8 @@ Daytona・Neo4j・Nosanaが登場する架空のハッカソン喜劇です。�
 Node.js 22以上。確認環境は Node.js 22.23.0 / npm 10.9.8 / macOS。
 
 ```sh
-cd hack-sprint-tokyo
+git clone https://github.com/rin0908/story-domino-hacksprint-tokyo.git
+cd story-domino-hacksprint-tokyo
 npm ci
 # .env がない初回のみ：
 cp -n .env.example .env
@@ -107,9 +108,9 @@ Daytonaでは生成文をコードとして実行しません。固定Pythonコ�
 - Daytona接続キーの有効期限は2026年9月13日。Sandboxは15分の無操作で自動停止します。次回デモ前に管理画面で再開が必要な場合があります。
 - Neo4jは今回専用の14日間無料トライアルDB。Nosanaは1台・Simple・最大実行時間2時間、自動延長なしの承認済み設定。GPU待機を含め作成から2時間後に停止するという意味ではありません。
 - Sandbox内にPython 3が必要。既存Sandboxの自動停止・料金体系は本人の設定によります。
-- 公開GitHubリポジトリ、提出フォーム送信、購入・削除は未実行。実行直前に本人確認が必要です。
+- 本人の承認後、[公開GitHubリポジトリ](https://github.com/rin0908/story-domino-hacksprint-tokyo)へコードとPDFを公開しました。提出フォームも本人承認後の2026-09-12 15:46 JSTに送信し、「回答を記録しました。」を確認しました。購入・削除は未実行。今後の購入・削除は実行直前に本人確認が必要です。
 
-## 主催者条件・提出準備
+## 主催者条件・提出記録
 
 [主催者の当日案内](https://community.theaibuilders.dev/c/20260912_daytona_tokyo#message_2151160767)を2026年9月12日に読み取り確認。締切16:00、ライブデモ16:20、各チーム2分。東京開催の案内ですが、時刻のタイムゾーン文字は投稿にありません。全3スポンサーが必須かは明示されていないため確定しません。
 
@@ -118,10 +119,10 @@ Daytonaでは生成文をコードとして実行しません。固定Pythonコ�
 [提出フォーム](https://tinyurl.com/0912submit)の必須項目：提出者メール、作品名、チームメンバー名／メール、**公開GitHubリポジトリURL、PDFスライド（10MB以内）**。
 
 - [2分の実演台本](docs/demo-script.md)
-- [提出情報の下書き](docs/submission-draft.md)
-- [PDFスライドの提出前ドラフト](output/pdf/story-domino-submission-draft.pdf)
+- [提出記録と作品説明](docs/submission-draft.md)
+- [提出したPDFスライド](output/pdf/story-domino-submission-draft.pdf)
 
-PDFは3サービスのブラウザー通し操作成功を反映した提出前ドラフトです。公開・提出は未実行です。
+PDFは3サービスのブラウザー通し操作成功を反映した5ページ・130,145バイトの資料です。ドラフト表記を残した同じファイルを2026-09-12 15:46 JSTに提出しました。提出後にPDFは変更していません。氏名・メールは公開資料へ記載していません。
 
 ## 公式資料
 
