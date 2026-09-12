@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#f6f4ed" />
+    <meta name="referrer" content="no-referrer" />
+    <title>Daytonaの接続キーを保存 — 物語のドミノ</title>
+    <link rel="stylesheet" href="/styles.css" />
+    <script src="/setup.js" type="module"></script>
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="site-header">
+        <a class="brand" href="/" aria-label="物語のドミノに戻る">
+          <span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i></span>
+          <span>物語のドミノ<span class="brand-subtitle">STORY DOMINO</span></span>
+        </a>
+        <a class="text-button" href="/">物語に戻る →</a>
+      </header>
+      <main>
+        <section class="hero" aria-labelledby="setup-title">
+          <div class="hero-copy">
+            <p class="eyebrow">DAYTONA / LOCAL SETUP</p>
+            <h1 id="setup-title">接続キーを、<br /><span class="accent-text">この端末へ。</span></h1>
+            <p class="hero-description" id="setup-description">このパソコンの .env だけへ保存。チャットへ貼らない。<br />DaytonaのAPIキーを、下の入力欄に直接入力してください。</p>
+            <p class="hero-description">保存後はサーバーを再起動して、アプリの「接続を確認」を実行してください。キーの保存と接続成功は別です。</p>
+          </div>
+          <section class="change-console" aria-label="Daytona APIキーの入力">
+            <form id="setup-form" method="post" autocomplete="off">
+              <label class="console-label" for="daytona-api-key">Daytona APIキー（この端末内だけに保存）</label>
+              <p class="hero-description" id="key-privacy-note">入力内容は伏せ字になります。保存済みの値を読み込んだり、表示したりしません。</p>
+              <p class="change-premise"><input class="button button-secondary change-button" id="daytona-api-key" type="password" autocomplete="off" spellcheck="false" autocapitalize="none" maxlength="512" required aria-describedby="setup-description key-privacy-note" placeholder="APIキーを入力" /></p>
+              <button class="button button-primary change-button" id="save-key-button" type="submit" disabled><span>この端末に保存</span><span aria-hidden="true">↗</span></button>
+              <div class="status-message" id="setup-status" role="status" aria-live="polite" aria-atomic="true"><p id="setup-status-text">入力したキーは、このアプリの .env に保存されます。</p></div>
+              <noscript><p class="hero-description">保存するにはJavaScriptを有効にしてください。キーをチャットへ貼らないでください。</p></noscript>
+            </form>
+          </section>
+        </section>
+      </main>
+      <footer class="site-footer"><div><span class="footer-brand">物語のドミノ</span><p>接続情報はこの端末で管理します。</p></div><a class="text-button" href="/">物語に戻る →</a></footer>
+    </div>
+  </body>
+</html>

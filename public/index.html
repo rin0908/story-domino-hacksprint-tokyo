@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#f6f4ed" />
+    <meta name="description" content="物語の設定をひとつ変えて、影響する場面の検索・修正案の生成・形式検査を行う物語編集アプリ。" />
+    <title>物語のドミノ — 消えたデモ</title>
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect x='9' y='2' width='14' height='28' rx='4' fill='%235c45b1'/%3E%3Cpath d='M11 16h10' stroke='white'/%3E%3Ccircle cx='16' cy='9' r='2' fill='white'/%3E%3Ccircle cx='16' cy='23' r='2' fill='white'/%3E%3C/svg%3E" />
+    <link rel="stylesheet" href="/styles.css" />
+    <script src="/app.js" type="module"></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#story-section">物語へ移動</a>
+    <div class="app-shell">
+      <header class="site-header">
+        <a class="brand" href="/" aria-label="物語のドミノ ホーム">
+          <span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i></span>
+          <span>物語のドミノ<span class="brand-subtitle">STORY DOMINO</span></span>
+        </a>
+        <span class="header-label"><span class="small-dot"></span> HACKSPRINT TOKYO <span class="header-edition">/ 2026</span></span>
+      </header>
+
+      <main>
+        <section class="hero" aria-labelledby="hero-title">
+          <div class="hero-copy">
+            <p class="eyebrow">ひとつの設定から、つながる物語へ。</p>
+            <h1 id="hero-title">その「実は」で、<br />物語が<span class="accent-text">動きだす。</span></h1>
+            <p class="hero-description">設定を変える。つながる場面を見つける。<br class="desktop-break" />直すところだけ、あなたの手で選ぶ。</p>
+          </div>
+          <div class="change-console">
+            <div class="console-label"><span class="console-dot"></span> 今回の設定変更 <span class="console-number">01</span></div>
+            <p class="change-premise">ファイルが、なかった。<br /><span>……と思っていたら？</span></p>
+            <button class="button button-primary change-button" id="change-button" type="button" disabled><span>実はデモは完成していた</span><span class="button-arrow" aria-hidden="true">↗</span></button>
+            <div class="console-footer"><span>実際のサービスで検索・生成・検査</span><button class="text-button" id="sample-button" type="button" disabled>サンプルを試す <span aria-hidden="true">→</span></button></div>
+          </div>
+        </section>
+
+        <section class="connection-panel" aria-label="スポンサーサービスの接続状態">
+          <div class="connection-heading"><span class="eyebrow">CONNECTED TOOLS</span><button class="button button-secondary button-compact" id="check-button" type="button">接続を確認</button></div>
+          <div class="service-list" id="service-list">
+            <div class="service-item"><span class="service-icon" aria-hidden="true">N</span><div><strong>Neo4j</strong><span class="service-description">関係をたどる</span></div><span class="state-pill">読み込み中</span></div>
+            <div class="service-item"><span class="service-icon" aria-hidden="true">n</span><div><strong>Nosana</strong><span class="service-description">修正案をつくる</span></div><span class="state-pill">読み込み中</span></div>
+            <div class="service-item"><span class="service-icon" aria-hidden="true">D</span><div><strong>Daytona</strong><span class="service-description">隔離環境で検査</span></div><span class="state-pill">読み込み中</span></div>
+          </div>
+          <details class="connection-details"><summary>接続の詳細と必要な設定</summary><div id="connection-details-content"><p>設定状況を取得しています。</p></div><p class="connection-note">設定済みと接続成功は別です。「接続を確認」で実際の応答を確認します。秘密情報はこの画面やチャットに入力せず、専用フォルダの .env に保存してください。</p></details>
+        </section>
+
+        <div class="status-message" id="status-message" role="status" aria-live="polite" aria-atomic="true"><span class="status-symbol" id="status-symbol" aria-hidden="true">○</span><p id="status-text">物語を読み込んでいます。</p></div>
+
+        <section class="story-section" id="story-section" aria-labelledby="story-title">
+          <div class="section-heading"><div><p class="eyebrow">THE STORY <span class="eyebrow-divider">/</span> 5 SCENES</p><h2 id="story-title">消えたデモ <span class="story-subtitle">— 発表まであと2分</span></h2></div><span class="story-version" id="story-version">元の物語</span></div>
+          <p class="fiction-note" id="fiction-note">架空のハッカソン喜劇です。実在企業の障害や発言を描いたものではありません。</p>
+          <div class="premise-bar"><span class="premise-label">物語の前提</span><p id="current-premise">読み込み中…</p><span class="premise-status" id="premise-status">ORIGINAL</span></div>
+          <div class="scene-grid" id="scene-grid" aria-label="5つの場面"></div>
+          <div class="story-bottom"><p class="ending"><span class="ending-label">オチ</span><span id="current-ending">読み込み中…</span></p><p class="impact-legend" id="impact-legend">変更する設定との関係は、まだ検索していません。</p></div>
+        </section>
+
+        <section class="workbench" aria-labelledby="workbench-title">
+          <div class="section-heading"><div><p class="eyebrow">EDITING DESK</p><h2 id="workbench-title">物語のつながりを、整える。</h2></div><span class="mode-badge" id="mode-badge">準備中</span></div>
+          <ol class="pipeline" aria-label="処理の進み具合">
+            <li class="pipeline-step" id="step-impact"><span class="step-number" aria-hidden="true">01</span><div><strong>影響する場面を検索</strong><span>Neo4j</span></div><span class="step-state" id="step-impact-state">未実行</span></li>
+            <li class="pipeline-step" id="step-generate"><span class="step-number" aria-hidden="true">02</span><div><strong>修正案を生成</strong><span>Nosana</span></div><span class="step-state" id="step-generate-state">未実行</span></li>
+            <li class="pipeline-step" id="step-validate"><span class="step-number" aria-hidden="true">03</span><div><strong>形式を検査</strong><span>Daytona</span></div><span class="step-state" id="step-validate-state">未実行</span></li>
+          </ol>
+
+          <div class="editor-grid">
+            <div class="comparison-panel">
+              <div class="panel-title-row"><h3>修正前と修正案</h3><span id="comparison-count">まだ変更はありません</span></div>
+              <div id="comparison-content" class="comparison-content"><div class="empty-state"><div class="empty-dominoes" aria-hidden="true"><span>1</span><span>2</span><span>3</span></div><h4>ひとつ変えて、つながりを見よう。</h4><p>上の「実はデモは完成していた」から始めます。<br />影響する場面と修正案が、ここに並びます。</p><span class="empty-caption">場面1・2を維持し、物語の続きを見直します。</span></div></div>
+            </div>
+            <aside class="review-panel" aria-label="変更理由と採用操作">
+              <div class="review-block"><span class="review-label">WHY THIS CHANGE</span><h3>変更の理由</h3><p id="change-reason" class="reason-text">まだ修正案はありません。設定と場面の関係を検索してから、変更理由を表示します。</p><p class="source-caption" id="generation-source"></p></div>
+              <div class="review-block validation-block"><div class="validation-heading"><h3>形式の検査</h3><span class="validation-pill" id="validation-pill">未実行</span></div><div id="validation-content"><p class="muted-text">場面IDの欠落・重複、5場面の存在、場面1・2の維持を検査します。</p></div><p class="scope-note">文章の意味や、すべての矛盾を判定する検査ではありません。内容はあなたが確認してください。</p></div>
+              <div class="adoption-controls"><button class="button button-primary" id="adopt-button" type="button" disabled>この修正案を採用 <span aria-hidden="true">✓</span></button><button class="button button-secondary" id="undo-button" type="button" disabled>元に戻す <span aria-hidden="true">↶</span></button><p id="adoption-note">形式検査に通ると、採用できます。</p></div>
+            </aside>
+          </div>
+        </section>
+      </main>
+
+      <footer class="site-footer"><div><span class="footer-brand">物語のドミノ</span><p>設定はひとつ。物語は、つながっている。</p></div><div class="event-status" id="event-status"><span>スポンサー条件：未確認</span><span>提出先：未確認</span><span>締切：未確認</span></div></footer>
+    </div>
+  </body>
+</html>
